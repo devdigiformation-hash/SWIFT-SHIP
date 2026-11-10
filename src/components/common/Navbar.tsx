@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Package, Truck, Building2, MapPin, Search } from 'lucide-react';
+import { assetUrl } from '../../utils/assets';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,7 +68,7 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="/logo_transparent.png"
+            src={assetUrl('/logo_transparent.png')}
             alt="SwiftShip UK"
             className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
           />

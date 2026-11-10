@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { SequenceManifest } from '../../types/sequence';
+import { assetUrl } from '../../utils/assets';
 
 interface FrameSequencePlayerProps {
   sequence: SequenceManifest;
@@ -34,7 +35,7 @@ export const FrameSequencePlayer: React.FC<FrameSequencePlayerProps> = ({
 
     // Load first frame immediately
     const firstImg = new Image();
-    firstImg.src = sequence.frames[0];
+    firstImg.src = assetUrl(sequence.frames[0]);
     firstImg.onload = () => {
       if (isCancelled) return;
       imageCache.current.set(0, firstImg);
@@ -44,7 +45,7 @@ export const FrameSequencePlayer: React.FC<FrameSequencePlayerProps> = ({
       sequence.frames.forEach((url, idx) => {
         if (idx === 0) return;
         const img = new Image();
-        img.src = url;
+        img.src = assetUrl(url);
         img.onload = () => {
           if (isCancelled) return;
           imageCache.current.set(idx, img);

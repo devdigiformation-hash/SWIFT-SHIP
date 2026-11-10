@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
+import { assetUrl } from '../../utils/assets';
 
 interface ServiceCardProps {
   title: string;
@@ -27,7 +28,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       {imageSrc && (
         <div className="relative h-48 w-full overflow-hidden bg-swift-midnight">
           <img
-            src={imageSrc}
+            src={assetUrl(imageSrc)}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
           />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../../utils/assets';
 
 export const Footer: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="/logo_transparent.png"
+                src={assetUrl('/logo_transparent.png')}
                 alt="SwiftShip UK"
                 className="h-10 w-auto object-contain"
               />
